@@ -31,7 +31,7 @@ def check_anthropic_key():
         return True
 
 def main():
-    print("🚁 Drone Flight Mapper - Installation Script")
+    print("Drone Flight Mapper - Installation Script")
     print("=" * 50)
     
     # Install requirements
