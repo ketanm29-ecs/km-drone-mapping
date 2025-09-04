@@ -1,17 +1,17 @@
-# 🚁 Cross-Border Drone Flight Mapper
+# Cross-Border Drone Flight Mapper
 
 A powerful web application for visualizing and analyzing cross-border drone flight data with AI-powered chat filtering. Built with Streamlit, Folium, and Anthropic Claude.
 
 ## ✨ Features
 
-### 🗺️ Interactive Map Visualization
+### Interactive Map Visualization
 - **Destination Heatmap**: Visualize flight density with altitude-weighted intensity
 - **Flow Lines**: Curved polylines showing origin-to-destination routes (performance-optimized)
 - **Clustered Markers**: Interactive markers for origins and destinations with rich popups
 - **Multiple Tile Layers**: CartoDB Positron, Dark Matter, and OpenStreetMap
 - **Layer Control**: Toggle different visualization layers on/off
 
-### 🔍 Advanced Filtering
+### Advanced Filtering
 - **Time Range**: Filter flights by specific date ranges
 - **Altitude Range**: Filter by minimum/maximum altitude
 - **Speed Range**: Filter by speed in knots
@@ -19,25 +19,25 @@ A powerful web application for visualizing and analyzing cross-border drone flig
 - **City Filters**: Filter by specific origin or destination cities
 - **Quick Presets**: One-click filters for common scenarios
 
-### 🤖 AI-Powered Chat Interface
+### AI-Powered Chat Interface
 - **Natural Language Queries**: Ask questions in plain English
 - **Structured Filter Generation**: Claude translates intent to structured filters
 - **Chat History**: Track your conversation with the data
 - **Applied Filters Badge**: See which filters were applied via chat
 
-### 📊 Analytics & KPIs
+### Analytics & KPIs
 - **Real-time Metrics**: Total flights, unique origins/destinations, averages
 - **Top Destinations**: Top 5 destination cities by flight count
 - **Data Preview**: Paginated table view of filtered data
 - **Export Functionality**: Download filtered data as CSV
 
-### ⚡ Performance Features
+### Performance Features
 - **Data Sampling**: Intelligent sampling for large datasets (50k+ rows)
 - **Caching**: Streamlit caching for expensive operations
 - **Responsive Updates**: Map and KPIs update within 1 second
 - **Memory Efficient**: Optimized for large flight datasets
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Python 3.10 or higher
@@ -123,16 +123,6 @@ A `sample_data.csv` file is included with 50 sample flights for testing.
 - Identify high-traffic crossing points
 - Track altitude and speed patterns
 
-### Transportation Analysis
-- Analyze drone delivery routes
-- Study traffic patterns and congestion
-- Optimize flight paths
-
-### Research & Development
-- Study drone behavior patterns
-- Analyze performance metrics
-- Research regulatory compliance
-
 ## 🛠️ Technical Architecture
 
 ### Frontend
@@ -176,37 +166,6 @@ The application supports multiple ways to set the API key:
    python setup_api_key.py
    ```
 
-### Map Configuration
-- **Default Center**: Automatically calculated from data
-- **Zoom Level**: 6 (continental view)
-- **Tile Provider**: CartoDB Positron (default)
-
-### Performance Settings
-- **Flow Line Sampling**: Max 1000 lines for performance
-- **Marker Sampling**: Max 500 markers for performance
-- **Heatmap Radius**: 20 pixels with 15 pixel blur
-
-## 📱 UI Components
-
-### Sidebar
-- **Data Upload**: CSV file uploader
-- **Manual Filters**: Time, altitude, speed, geographic filters
-- **Map Options**: Toggle flows and markers
-- **Quick Presets**: One-click filter combinations
-
-### Main Panel
-- **KPI Cards**: Key metrics in real-time
-- **Interactive Map**: Folium map with layer control
-- **Chat Interface**: AI-powered query system
-- **Data Table**: Filtered data preview
-- **Export Options**: Download filtered data
-
-## 🔒 Security Features
-
-- **No Code Execution**: LLM outputs only structured data
-- **Schema Validation**: All LLM responses validated against schema
-- **Input Sanitization**: CSV data validation and cleaning
-- **Environment Variables**: Secure API key management
 
 ## 🚧 Troubleshooting
 
@@ -221,20 +180,6 @@ The application supports multiple ways to set the API key:
    - Ensure environment variable is set
    - Restart terminal/IDE after setting
 
-3. **Map not loading**
-   - Check internet connection
-   - Verify CSV coordinates are valid
-   - Ensure data is properly loaded
-
-4. **Slow performance with large datasets**
-   - Use sampling options
-   - Reduce marker/flow line density
-   - Check available memory
-
-5. **Chat not working**
-   - Verify API key is valid
-   - Check internet connection
-   - Ensure CSV is loaded first
 
 ### Performance Tips
 
@@ -243,33 +188,3 @@ The application supports multiple ways to set the API key:
 - **Memory Management**: Clear session state when needed
 - **Caching**: Leverage Streamlit's caching decorators
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🙏 Acknowledgments
-
-- **Streamlit**: For the amazing web framework
-- **Folium**: For the interactive mapping capabilities
-- **Anthropic**: For the Claude AI model
-- **OpenStreetMap**: For the map tiles
-
-## 📞 Support
-
-For questions or issues:
-1. Check the troubleshooting section
-2. Review the chat examples
-3. Open an issue on GitHub
-4. Check the Streamlit documentation
-
----
-
-**Happy Drone Mapping! 🚁🗺️**
