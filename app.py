@@ -13,13 +13,8 @@ from folium.plugins import MarkerCluster, HeatMap
 import tempfile
 import io
 
-# Load environment variables from config.env file
-try:
-    from dotenv import load_dotenv
-    load_dotenv('config.env')
-except ImportError:
-    # If python-dotenv is not installed, continue without it
-    pass
+from dotenv import load_dotenv
+load_dotenv('config.env')
 
 # Try to import streamlit_folium, fallback to alternative if not available
 try:
@@ -907,8 +902,23 @@ def main():
                 
     # Main content
     if st.session_state.data is not None:
-        # Apply filters
+        
+        
+        # Map
+        st.subheader("🗺️ Flight Map")
+       # Apply filters
         filtered_data = apply_filters(st.session_state.data, st.session_state.filters)
+         
+        # Create map
+        map_obj = create_map(
+            filtered_data,
+            show_flows=show_flows if 'show_flows' in locals() else True,
+            show_markers=show_markers if 'show_markers' in locals() else True
+        )
+        
+        # Display map
+        folium_static(map_obj, width=1200, height=600)
+        
         
         # Calculate KPIs
         kpis = calculate_kpis(filtered_data)
@@ -941,20 +951,7 @@ def main():
             for i, (city, count) in enumerate(kpis['top_destinations'].items()):
                 with dest_cols[i]:
                     st.metric(city, f"{count:,}")
-        
-        # Map
-        st.subheader("🗺️ Flight Map")
-        
-        # Create map
-        map_obj = create_map(
-            filtered_data,
-            show_flows=show_flows if 'show_flows' in locals() else True,
-            show_markers=show_markers if 'show_markers' in locals() else True
-        )
-        
-        # Display map
-        folium_static(map_obj, width=1200, height=600)
-        
+
         # Chat with Data
         st.subheader("💬 Chat with Your Data")
         st.markdown("Ask questions about your data in natural language!")
